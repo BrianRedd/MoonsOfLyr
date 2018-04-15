@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <TITLE>World of Lyr - Sky</TITLE>
+    <!-- version 1.1 -->
+    <meta charset="utf-8">
+    <script src="http://rbrianredd.com/v1/code/jquery-1.6.4.min.js"></script>
+    <script src="http://rbrianredd.com/v1/code/jquery-css-transform.js"></script>
+    <script src="http://rbrianredd.com/v1/code/jquery-animate-css-rotate-scale.js"></script>
+    <script src="http://rbrianredd.com/v1/code/jquery-ui-1.8.16.custom.min.js"></script>
+    <link type="text/css" href="styles/black-tie/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+
+    <script src="inc/sky_2.js"></script>
+    <link type="text/css" href="styles/sky_2.css" rel="stylesheet" />
+</HEAD>
+
+<BODY>
+
+    <div id="sky_master" class="circle">
+        <div id="dawnsky" class="circle"></div>
+        <div id="daysky" class="circle"></div>
+        <div id="celestialequator"><span class="skytext">celestial equator</span></div>
+        <div id="ecliptic"><span class="skytext">ecliptic</span></div>
+        <div id="sun" class="circle"></div>
+        <div id="zenith"><abbr class="skytext" title="Zenith">+</abbr></div>
+        <div id="celestialpole"><abbr class="skytext" title="">+</abbr></div>
+        <div id="MoonInfo">
+            <span id="MIname"></span><br/>
+            <span id="MIscion"></span><br/> Period: <span id="MIperiod"></span>
+        </div>
+    </div>
+
+    <div id="datepanel">
+        <form id="dateform" name="dateform">
+            <p><label for="cpyear">Year:</label> <input name="cpyear" id="cpyear" type="number" />
+                <label for="cpday">Day:</label> <input name="cpday" id="cpday" type="number" min="0" /></p>
+            <div id="cpdayslider"></div>
+            <p><label for="cptime">Local Hour:</label> <input name="cptime" id="cptime" type="number" min="0" /></p>
+            <div id="cptimeslider"></div>
+        </form>
+        <form id="hourform" name="hourform" onsubmit="return false;">
+            <p><label for="cphout">Total Hour:</label> <input name="cphour" id="cphour" type="text" /></p>
+        </form>
+    </div>
+
+    <div id="clock" class="center">
+        Absolute: <span id="clyear">Year <span class="clickable"></span></span>,
+        <span id="clday">Day <span class="clickable"></span> (<span id="season"></span>)</span>,
+        <span id="clhour"><span class="clickable"></span> Hour</span> [<span id="cltt"></span>]
+
+        <br/>Time Zone <span id="tz"></span>: <span id="cllyear">Year <span class="clickable"></span></span>,
+        <span id="cllday">Day <span class="clickable"></span></span>,
+        <span id="cllhour"><span class="clickable"></span> Hour</span> [<span id="clltt"></span>]
+
+        <br/><abbr title="Latitude and Longitude">Coordinates: </abbr><span class="clickable" id="cllat"></span> <span class="clickable" id="cllong"></span>
+    </div>
+
+    <form id="gridtype" name="gridtype">
+        <div id="gtradio" class="hidden">
+            <input type="radio" id="gtproj" name="gtradio" value="project" checked="checked" /><label for="gtproj">Projection</label>
+            <input type="radio" id="gtdome" name="gtradio" value="dome" /><label for="gtdome">Dome</label>
+        </div>
+    </form>
+
+    <div id="controlpanel">
+        <form id="cpform" name="cpform">
+            <p class="center"><label for="cplat">Latitude:</label> <input name="cplat" id="cplat" type="number" min="-90" max="90" step="5" /></p>
+            <p><label for="cplong">Longitude:</label> <input name="cplong" id="cplong" type="number" min="-175" max="180" step="5" /></p>
+            <div id="cplatslider"></div>
+            <div id="cplongslider"></div>
+            <p class="hidden"><label for="showecl">Show Ecliptic</label><input type="checkbox" id="showecl" name="showecl" checked="checked" /></p>
+        </form>
+    </div>
+
+    <div id="set_buttons">
+        <button id="opendcp">Set Date/Time</button>
+        <button id="openlcp">Set Location</button>
+    </div>
+    <div id="help">
+        <em>Best at Full Screen</em>
+        <ul>
+            <li>Arrow forward/back to increment hour</li>
+            <li>Arrow up/down to increment day</li>
+            <li>Page up/down to increment year</li>
+            <li>Home to return to 1847:264:5</li>
+            <li>End to go to 1848:187:1 (convergence)</li>
+            <li>Esc to go to 0:0:5</li>
+            <li>NumPad * to move 45&deg; longitudally</li>
+            <li>[/] to increment 500,526 hours (time between convergences)</li>
+            <li>q to move geographically to sun at zenith</li>
+            <li>w, e, and r to move geographically to where each moon is at zenith</li>
+            <li>Left/right click on numbers in info bar to increment up/down</li>
+        </ul>
+    </div>
+
+</BODY>
+
+</HTML>

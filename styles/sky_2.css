@@ -1,0 +1,276 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------
+
+* Filename: Sky.css
+* Description: Styles for Moons of Lyr
+
+* Author: R. Brian Redd 2013-02-03
+* Version 1.1
+         
+--------------------------------------------------------*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+.circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.center {
+    text-align: center;
+}
+
+.flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+
+/* Sky
+----------------------------------*/
+
+#sky_master {
+    position: relative;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    /*#00AAE4;*/
+    background-image: url(../images/starscape2.jpg);
+    background-position: 0px -500px;
+    height: 1000px;
+    width: 1000px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+#dawnsky {
+    position: absolute;
+    background-image: linear-gradient(left, #0c0126 7%, #19022a 12%, #27032e 23%, #43013a 38%, #5f0046 44%, #7e003a 54%, #9e002f 61%, #ce1129 71%, #fe2323 77%, #f6441a 82%, #ee6611 87%, #f68617 93%, #ffa61e 98%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.06567889822065, #0c0126), color-stop(0.1176747, #19022a), color-stop(0.22994306504649997, #27032e), color-stop(0.37598319999999996, #43013a), color-stop(0.43984393878431993, #5f0046), color-stop(0.544758, #7e003a), color-stop(0.6070303324195799, #9e002f), color-stop(0.7105123, #ce1129), color-stop(0.77393466551848, #fe2323), color-stop(0.8197397, #f6441a), color-stop(0.8692658678592999, #ee6611), color-stop(0.930715, #f68617), color-stop(0.9802042847244999, #ffa61e));
+    background-image: -moz-linear-gradient(left, #0c0126 7%, #19022a 12%, #27032e 23%, #43013a 38%, #5f0046 44%, #7e003a 54%, #9e002f 61%, #ce1129 71%, #fe2323 77%, #f6441a 82%, #ee6611 87%, #f68617 93%, #ffa61e 98%);
+    background-image: -o-linear-gradient(left, #0c0126 7%, #19022a 12%, #27032e 23%, #43013a 38%, #5f0046 44%, #7e003a 54%, #9e002f 61%, #ce1129 71%, #fe2323 77%, #f6441a 82%, #ee6611 87%, #f68617 93%, #ffa61e 98%);
+    background-image: -ms-linear-gradient(left, #0c0126 7%, #19022a 12%, #27032e 23%, #43013a 38%, #5f0046 44%, #7e003a 54%, #9e002f 61%, #ce1129 71%, #fe2323 77%, #f6441a 82%, #ee6611 87%, #f68617 93%, #ffa61e 98%);
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+#daysky {
+    position: absolute;
+    background-color: #00AAE4;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+
+/* Grid
+----------------------------------*/
+
+#ecliptic,
+#celestialequator {
+    position: absolute;
+    opacity: 0.5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#ecliptic .skytext,
+#celestialequator .skytext {
+    position: absolute;
+    text-align: right;
+}
+
+#ecliptic .skytext {
+    color: yellow;
+    width: 60%;
+}
+
+#celestialequator .skytext {
+    width: 50%;
+}
+
+.skytext {
+    color: red;
+    font-size: 0.8em;
+    cursor: default;
+}
+
+.grid {
+    position: absolute;
+    border: 1px dotted red;
+    opacity: 0.7;
+}
+
+.grid span {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    top: 50%;
+    right: -7px;
+}
+
+
+/* Moons
+----------------------------------*/
+
+.shadow {
+    position: absolute;
+    top: 0px;
+}
+
+.dkcolor {
+    background-color: #000;
+}
+
+
+/* Sun
+----------------------------------*/
+
+#sun {
+    position: absolute;
+    background-color: #FEF5B6;
+}
+
+
+/* Controls
+----------------------------------*/
+
+#set_buttons {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+
+/*#openlcp {
+    position: absolute;
+    top: 5px;
+    left: 90px;
+}*/
+
+.faded {
+    opacity: 0.5;
+}
+
+.faded:hover {
+    opacity: 1;
+}
+
+#datepanel [type="number"] {
+    width: 50px;
+}
+
+#controlpanel [type="number"] {
+    width: 50px;
+}
+
+#cplatslider {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#cphour {
+    width: 100px;
+}
+
+#clock {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    color: white;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: #FE7402;
+}
+
+
+/*#gridtype {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}*/
+
+#help {
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    width: 186px;
+    background-color: white;
+    opacity: 0.1;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#help:hover {
+    opacity: 0.5
+}
+
+#help ul {
+    text-align: left;
+    margin-left: -20px;
+}
+
+
+/* jQuery UI Custom
+----------------------------------*/
+
+.ui-button .ui-button-text {
+    line-height: 1;
+    font-size: .8em;
+}
+
+
+/* Moon Info Window
+----------------------------------*/
+
+#MoonInfo {
+    height: 60px;
+    width: 120px;
+    background-color: #FFF;
+    padding: 5px;
+    display: none;
+    position: absolute;
+    opacity: 0.7;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#MoonInfo #MIname {
+    font-weight: bold;
+}
+
+#MoonInfo #MIscion {
+    font-style: italic;
+}
